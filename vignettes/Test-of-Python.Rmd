@@ -23,8 +23,12 @@ py_install("matplotlib", pip = TRUE)
 ```
 
 ```{python}
+import matplotlib
+matplotlib.use('Agg')
+```
+
+```{python}
 import matplotlib.pyplot as plt
-plt.use('Agg')
 plt.plot([0, 2, 1, 4])
 plt.show()
 ```
