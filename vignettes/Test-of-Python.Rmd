@@ -1,0 +1,32 @@
+---
+title: "Test-of-Python"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Test-of-Python}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup-py}
+library(reticulate)
+use_virtualenv("r-reticulate")
+use_python(Sys.which("python"))
+py_available(TRUE)
+py_install("matplotlib", pip = TRUE)
+```
+
+```{python}
+import matplotlib.pyplot as plt
+plt.plot([0, 2, 1, 4])
+plt.show()
+```
+
+
+
