@@ -12,7 +12,6 @@ RUN . /etc/environment \
   # e.g. need this for ggforce::geom_sina
   && sudo apt-get update \
   && sudo apt-get install software-properties-common -y \
-  && sudo apt-add-repository universe y \
   # install Python
   && sudo apt install -y libpython3-dev python-pip  \
   && sudo pip install virtualenv \
