@@ -4,7 +4,7 @@ FROM rocker/verse:3.6.0
 # required
 MAINTAINER Your Name <your_email@somewhere.com>
 
-COPY . /<REPO>
+COPY . /pythoninrmd
 
 # go into the repo directory
 RUN . /etc/environment \
