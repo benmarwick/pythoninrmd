@@ -13,7 +13,7 @@ RUN . /etc/environment \
   && sudo apt-get update \
   && sudo apt-get install libudunits2-dev -y \
   # install Python
-  && sudo apt install -y python3-venv python3-pip python3-virualenv \
+  && sudo apt install -y python3.7-venv python3-pip python3.7-virualenv \
   # install reticulate pkg  and set it up
   && R -e 'install.packages("remotes", repo = "https://cloud.r-project.org")' \
   && R -e 'remotes::install_github("rstudio/reticulate")' \
