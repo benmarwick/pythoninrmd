@@ -20,15 +20,19 @@ use_virtualenv("r-reticulate")
 use_python(Sys.which("python"))
 py_available(TRUE)
 py_install("matplotlib", pip = TRUE)
+py_install("os", pip = TRUE)
 ```
 
 ```{python}
-import matplotlib
-matplotlib.use('Agg')
-```
-
-```{python}
+import os
+import matplotlib as mpl
+if os.environ.get('DISPLAY','') == '':
+    print('no display found. Using non-interactive Agg backend')
+    mpl.use('Agg')
 import matplotlib.pyplot as plt
+```
+
+```{python}
 plt.plot([0, 2, 1, 4])
 plt.show()
 ```
