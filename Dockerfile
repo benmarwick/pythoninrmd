@@ -12,10 +12,12 @@ RUN . /etc/environment \
   # e.g. need this for ggforce::geom_sina
   && sudo apt-get update \
   && sudo apt-get install libudunits2-dev -y \
-  # instally Python and reticulate pkg
+  # install Python
   && sudo apt install -y python3-venv python3-pip python3-virualenv \
-  &&  R -e 'install.packages("remotes", repo = "https://cloud.r-project.org")' -e 'remotes::install_github("rstudio/reticulate")' \
-  && -e 'reticulate::virtualenv_create()' \
+  # install reticulate pkg  and set it up
+  && R -e 'install.packages("remotes", repo = "https://cloud.r-project.org")' \
+  && R -e 'remotes::install_github("rstudio/reticulate")' \
+  && R -e 'reticulate::virtualenv_create()' \
   # install compendium pkg and build pkg and render vignettes
   && R -e "devtools::install('/pythoninrmd', dep=TRUE)" \
   && R -e "devtools::build('/pythoninrmd', vignettes = TRUE)"
