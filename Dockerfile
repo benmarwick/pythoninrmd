@@ -13,7 +13,7 @@ RUN . /etc/environment \
   && sudo apt-get update \
   && sudo apt-get install software-properties-common -y \
   # install Python
-  && sudo apt install -y libpython3-dev python-pip  \
+  && sudo apt install -y libpython3-dev python-pip python-tk \
   && sudo pip install virtualenv \
   # install reticulate pkg  and set it up
   && R -e 'install.packages("remotes", repo = "https://cloud.r-project.org")' \
